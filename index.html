@@ -11,19 +11,20 @@ if (!q1 || !q2 || !q3 || !heure) {
     return;
 }
 
-let message = 
-"💌 Demande de rendez-vous à la belle Mélissa Sagne\n\n" +
-"1) Onesime a-t-il quelqu’un que vous appréciez particulièrement ? : " + q1.parentElement.innerText.trim() + "\n\n" +
-"2) Onesime serait-il un bon choix pour vous ? : " + q2.parentElement.innerText.trim() + "\n\n" +
-"3) Accepteriez-vous un rendez-vous avec lui ? : " + q3.parentElement.innerText.trim() + "\n\n" +
-"📅 Date : 1 août 2026\n" +
-"⏰ Heure choisie : " + heure.parentElement.innerText.trim();
+let message = `💌 Demande de rendez-vous à la belle Mélissa Sagne
 
-let numero = "2250708730853";
+1) Onesime a-t-il quelqu’un que vous appréciez particulièrement ? ${q1.value}
 
-let url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(message);
+2) Onesime serait-il un bon choix pour vous ? ${q2.value}
 
-window.location.href = url;
+3) Accepteriez-vous un rendez-vous avec lui ? ${q3.value}
+
+📅 Date : 1 août 2026
+⏰ Heure choisie : ${heure.value}`;
+
+let url = "https://wa.me/2250708730853?text=" + encodeURIComponent(message);
+
+window.open(url, "_blank");
 
 }
 </script>
